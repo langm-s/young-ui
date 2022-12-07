@@ -5,7 +5,7 @@
  * @LastEditTime: 2022-12-07 12:00:33
  * @Description: 全局导出所有组件
  */
-import yTable from "./young-table";
+import yTable from "./young-button";
 
 // 组件存储列表
 const yComponents = [yTable];

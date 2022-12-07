@@ -5,7 +5,7 @@
  * @LastEditTime: 2022-12-07 11:51:53
  * @Description: 导出单个组件
  */
-import yTbale from "./young-table.vue";
+import yTbale from "./YoungButton.vue";
 
 // 为组件注册install方法
 yTbale.install = function (Vue) {
