@@ -2,13 +2,14 @@
  * @Author: junshao
  * @Date: 2022-12-07 11:52:48
  * @LastEditors: junshao
- * @LastEditTime: 2022-12-07 16:47:56
+ * @LastEditTime: 2022-12-08 09:07:55
  * @Description: 全局导出所有组件
  */
-import yTable from "./young-table/young-table.vue";
+
+import yButton from "./young-button";
 
 // 组件存储列表
-const yComponents = [yTable];
+const yComponents = [yButton];
 
 // 定义install方法，接受Vue作为参数，使用Vue.use注册插件，所有组件都被注册到全局
 const install = function (Vue) {
