@@ -2,10 +2,10 @@
  * @Author: junshao
  * @Date: 2022-12-07 11:52:48
  * @LastEditors: junshao
- * @LastEditTime: 2022-12-07 12:00:33
+ * @LastEditTime: 2022-12-07 16:47:56
  * @Description: 全局导出所有组件
  */
-import yTable from "./young-table";
+import yTable from "./young-table/young-table.vue";
 
 // 组件存储列表
 const yComponents = [yTable];
@@ -24,7 +24,4 @@ if (typeof window !== undefined && window.Vue) {
   install(window.Vue);
 }
 
-export default {
-  install,
-  yTable,
-};
+export default install;

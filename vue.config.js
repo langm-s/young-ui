@@ -2,20 +2,35 @@
  * @Author: junshao
  * @Date: 2022-12-05 11:31:37
  * @LastEditors: junshao
- * @LastEditTime: 2022-12-07 10:21:38
+ * @LastEditTime: 2022-12-07 17:39:49
  * @Description: file content
  */
-const path = require("path");
+
+/* const path = require("path");
 function resolve(dir) {
   return path.join(__dirname, dir);
-}
-
+} */
 module.exports = {
+  // publicPath: "./",
   chainWebpack: (config) => {
-    config.resolve.alias
-      .set("@", resolve("examples"))
-      .set("young-ui/packages", resolve("packages"))
-      .set("young-ui/lib", resolve("lib"));
+    config.module
+      .rule("js")
+      .include.add("/packages")
+      .end()
+      .use("babel")
+      .loader("babel-loader")
+      .tap((options) => {
+        // 修改它的选项...
+        return options;
+      });
+    config.module
+      .rule("vue")
+      .use("vue-loader")
+      .loader("vue-loader")
+      .tap((options) => {
+        // 修改它的选项...
+        return options;
+      });
   },
   pages: {
     index: {
@@ -24,5 +39,9 @@ module.exports = {
       filename: "index.html",
     },
   },
-  css: { extract: false },
+  css: {
+    extract: {
+      Type: true,
+    },
+  },
 };
