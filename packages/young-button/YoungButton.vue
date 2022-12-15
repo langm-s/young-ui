@@ -2,16 +2,20 @@
  * @Author: junshao
  * @Date: 2022-12-07 10:35:02
  * @LastEditors: junshao
- * @LastEditTime: 2022-12-07 10:38:05
+ * @LastEditTime: 2022-12-13 10:56:27
  * @Description: young-table 封装el-table表格
 -->
 <template>
-  <div class="y-button" :class="classObj">按 钮</div>
+  <button class="y-button" :class="classObj" type="button" @click="handleClick" :disabled="disabled">
+    <span v-if="$slots.default">
+      <slot></slot>
+    </span>
+  </button>
 </template>
 
 <script>
 export default {
-  name: "",
+  name: "yButton",
   components: {},
   data() {
     return {
@@ -21,46 +25,83 @@ export default {
         "success-type": this.type === "success",
         "danger-type": this.type === "danger",
         "warning-type": this.type === "warning",
+        "text-type": this.type === "text",
+        "default-type": !this.type,
+        "disabled-button": this.disabled,
       },
     };
   },
   props: {
     type: {
       type: String,
-      default: "primary",
+      default: "",
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
     },
   },
   computed: {},
   watch: {},
-  created() {},
-  mounted() {},
-  methods: {},
+  created() { },
+  mounted() { },
+  methods: {
+    handleClick(event) {
+      this.$emit("click", event);
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>
 .y-button {
   display: inline-block;
   line-height: 100%;
-  padding: 6px 10px;
+  padding: 8px 10px;
   margin: 0 10px;
-  color: #fff;
-  background-color: #c1c1c1;
+  border: none;
+  color: #606266;
   border-radius: 6px;
   cursor: pointer;
 }
+
+.default-type {
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
 .primary-type {
+  color: #fff;
   background-color: #0099ff;
 }
+
 .success-type {
-  background-color: #00cc00;
+  color: #fff;
+  background-color: #00ad00;
 }
+
 .normal-type {
-  background-color: #969696;
+  color: #fff;
+  background-color: #909399;
 }
+
 .danger-type {
+  color: #fff;
   background-color: #e20202;
 }
+
 .warning-type {
+  color: #fff;
   background-color: #ee8700;
+}
+
+.text-type {
+  color: #0099ff;
+  background-color: none;
+  padding: 0;
+  border: none;
+}
+
+.disabled-button {
+  cursor: not-allowed;
 }
 </style>

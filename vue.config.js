@@ -2,7 +2,7 @@
  * @Author: junshao
  * @Date: 2022-12-05 11:31:37
  * @LastEditors: junshao
- * @LastEditTime: 2022-12-07 17:39:49
+ * @LastEditTime: 2022-12-15 13:14:46
  * @Description: file content
  */
 
@@ -11,7 +11,8 @@ function resolve(dir) {
   return path.join(__dirname, dir);
 } */
 module.exports = {
-  // publicPath: "./",
+  // publicPath 项目打包后的文件访问路径
+  publicPath: "./",
   chainWebpack: (config) => {
     config.module
       .rule("js")
