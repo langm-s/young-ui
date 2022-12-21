@@ -2,7 +2,7 @@
  * @Author: junshao
  * @Date: 2022-12-13 09:37:41
  * @LastEditors: junshao
- * @LastEditTime: 2022-12-13 11:46:16
+ * @LastEditTime: 2022-12-21 11:05:59
  * @Description: file content
 -->
 <template>
@@ -39,7 +39,8 @@
 </template>
 
 <script>
-import YButton from "../../packages/young-button/YoungButton.vue";
+// import YButton from "../../packages/young-button/YoungButton.vue";
+import YButton from "@/young-button/YoungButton.vue";
 export default {
   name: "",
   components: { YButton },
@@ -48,8 +49,8 @@ export default {
   },
   computed: {},
   watch: {},
-  created() { },
-  mounted() { },
+  created() {},
+  mounted() {},
   methods: {
     handleClick() {
       window.alert("点击了按钮");

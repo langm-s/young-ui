@@ -11,7 +11,7 @@
     "junshao"
   ],
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "bundle": "vue-cli-service build --target lib --name junshao-ui --dest lib packages/index.js"
